@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Facts</title>
+    </head>
+    <body>
+        <h1>Facts</h1>
+        <ul>
+            {% for fact in facts %}
+                <li>{{ fact.text }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
