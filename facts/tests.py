@@ -51,18 +51,26 @@ class FactModelTest(TestCase):
         self.assertEqual(saved_facts[1].text, "This is the second fact")
 
     def test_facts_are_in_reverse_date_order(self):
-        first_fact = Fact.objects.create(text="This is the first fact")
+        first_fact = Fact.objects.create(text="Later fact")
         second_fact = Fact.objects.create(
-            text="This is the second fact",
+            text="Earlier fact",
             timestamp=datetime.datetime.now() - datetime.timedelta(days=3)
             )
         saved_facts = Fact.objects.all()
 
-        self.assertEqual(saved_facts[0].text, "This is the second fact")
-        self.assertEqual(saved_facts[1].text, "This is the first fact")
+        self.assertEqual(saved_facts[0].text, "Later fact")
+        self.assertEqual(saved_facts[1].text, "Earlier fact")
 
 
     def test_unicode(self):
         fact = Fact.objects.create(text="This is the first fact")
 
         self.assertEqual(fact.__unicode__(), "This is the first fact")
+
+
+# from cms_app import FactApphook
+#
+# class ApphookTest(TestCase):
+#     self.assertEqual(FactApphook.name, "Facts")
+#     self.assertEqual(FactApphook.urls, "facts.urls")
+#

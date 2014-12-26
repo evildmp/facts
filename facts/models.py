@@ -13,4 +13,4 @@ class Fact(models.Model):
         return self.text
 
     class Meta:
-        ordering = ["timestamp"]
+        ordering = ["-timestamp"]
