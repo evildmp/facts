@@ -1,3 +1,4 @@
+# functional tests
 import sys
 
 from django.test import LiveServerTestCase
@@ -54,6 +55,7 @@ class NewVisitorTest(LiveServerTestCase):
 
         self.assertIn("This is the first fact", li_items[0].text)
         self.assertIn("This is the second fact", li_items[1].text)
+
 
 class AdminUserTest(LiveServerTestCase):
 

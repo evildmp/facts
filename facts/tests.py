@@ -61,7 +61,6 @@ class FactModelTest(TestCase):
         self.assertEqual(saved_facts[0].text, "Later fact")
         self.assertEqual(saved_facts[1].text, "Earlier fact")
 
-
     def test_unicode(self):
         fact = Fact.objects.create(text="This is the first fact")
 
